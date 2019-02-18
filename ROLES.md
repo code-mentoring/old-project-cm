@@ -19,3 +19,4 @@ Once you have submitted a pull request, one of the project owners will review yo
 | Lead Developer | Jessie Wang | jessie.wang@hotmail.co.uk | [techworldhello](https://github.com/techworldhello) |
 | Product Owner | Tristan Matthias | hello@tristanmatthias.com | [tristanMatthias](https://github.com/tristanMatthias) |
 | Front End / Full Stack Developer | Akshay Harti | akshay.r555@gmail.com | [AkshayHarti](https://github.com/AkshayHarti) |
+| Fullstack Developer | Lu-Vuong Le | lu-vuongle@hotmail.com | [luvuong-le](https://github.com/luvuong-le) |
