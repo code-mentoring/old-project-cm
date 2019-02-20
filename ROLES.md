@@ -18,4 +18,6 @@ Once you have submitted a pull request, one of the project owners will review yo
 | Architect & Scrum Master | Michael Lambert | michael@alphageek.com.au | [nibynool](https://github.com/nibynool) |
 | Lead Developer | Jessie Wang | jessie.wang@hotmail.co.uk | [techworldhello](https://github.com/techworldhello) |
 | Product Owner | Tristan Matthias | hello@tristanmatthias.com | [tristanMatthias](https://github.com/tristanMatthias) |
-|DevOps|Hajra Parveen|hajra.parveen.akhtar@gmail.com |hajrap|
+| Front End / Full Stack Developer | Akshay Harti | akshay.r555@gmail.com | [AkshayHarti](https://github.com/AkshayHarti) |
+| Fullstack Developer | Lu-Vuong Le | lu-vuongle@hotmail.com | [luvuong-le](https://github.com/luvuong-le) |
+| DevOps | Hajra Parveen | hajra.parveen.akhtar@gmail.com | [hajrap](https://github.com/hajrap) |
