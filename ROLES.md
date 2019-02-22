@@ -21,3 +21,4 @@ Once you have submitted a pull request, one of the project owners will review yo
 | Front End / Full Stack Developer | Akshay Harti | akshay.r555@gmail.com | [AkshayHarti](https://github.com/AkshayHarti) |
 | Fullstack Developer | Lu-Vuong Le | lu-vuongle@hotmail.com | [luvuong-le](https://github.com/luvuong-le) |
 | DevOps | Hajra Parveen | hajra.parveen.akhtar@gmail.com | [hajrap](https://github.com/hajrap) |
+| QA & Back End | Chidambaram Ganesan | chidambaram.ganesan@gmail.com | [chidag](https://github.com/chidag) |
