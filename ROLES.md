@@ -20,5 +20,6 @@ Once you have submitted a pull request, one of the project owners will review yo
 | Product Owner | Tristan Matthias | hello@tristanmatthias.com | [tristanMatthias](https://github.com/tristanMatthias) |
 | Front End / Full Stack Developer | Akshay Harti | akshay.r555@gmail.com | [AkshayHarti](https://github.com/AkshayHarti) |
 | Fullstack Developer | Lu-Vuong Le | lu-vuongle@hotmail.com | [luvuong-le](https://github.com/luvuong-le) |
+| Fullstack Developer | Tim McNamara | tim@timmcnamara.com | [timmcnamara](https://github.com/timmcnamara) |
 | DevOps | Hajra Parveen | hajra.parveen.akhtar@gmail.com | [hajrap](https://github.com/hajrap) |
 | QA & Back End | Chidambaram Ganesan | chidambaram.ganesan@gmail.com | [chidag](https://github.com/chidag) |
