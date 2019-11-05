@@ -7,6 +7,10 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+html, body, #root {
+  min-height: 100vh;
+}
+
 body {
   font-size: 2.8rem;
   color: $color-blue;
