@@ -15,9 +15,9 @@ export const github = new OAuthProvider({
   },
   mapUserData: {
     socialId: 'id',
-    firstName: 'first_name',
-    lastName: 'last_name',
+    firstName: user => user.name.split(' ')[0],
+    lastName: user => user.name.split(' ')[1],
     email: 'email',
-    socialPic: 'picture.data.url'
+    socialPic: 'avatar_url'
   }
 });

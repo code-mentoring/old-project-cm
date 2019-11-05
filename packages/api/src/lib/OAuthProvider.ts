@@ -1,9 +1,9 @@
+import dot from 'dot-object';
 import { NextFunction, Request, Response, Router } from 'express';
 import request from 'request-promise-native';
-import dot from 'dot-object';
-
+import { ErrorAuthOauthCode } from '../errors';
 import { CreateUser } from '../services/UserService';
-import { ErrorBadRequest } from '../errors';
+
 
 const URI_PREFIX = '/oauth';
 
@@ -21,12 +21,13 @@ export interface ProviderOptions {
   mapUserData: MapUserData;
 }
 
+type MapUserDataValue = (user: any) => string;
 export interface MapUserData {
-  socialPic: string;
-  socialId: string;
-  firstName: string;
-  lastName: string;
-  email: string;
+  socialPic: string | MapUserDataValue
+  socialId: string | MapUserDataValue
+  firstName: string | MapUserDataValue
+  lastName: string | MapUserDataValue
+  email: string | MapUserDataValue
 }
 
 
@@ -98,6 +99,7 @@ export class OAuthProvider {
       token = await request({
         url: this.getTokenURL,
         method: 'POST',
+        headers: { 'User-Agent': 'node' },
         json: true,
         qs: {
           client_id: this.clientID,
@@ -108,14 +110,18 @@ export class OAuthProvider {
         }
       });
     } catch (e) {
-      if (e.error && e.error.error) throw new ErrorBadRequest(e.error.error.message);
+      if (e.error && e.error.error) throw new ErrorAuthOauthCode()
       else throw e;
     }
+
+    if (token.error) throw new ErrorAuthOauthCode()
+
 
 
     const socialUser = await request({
       url: this.getUserURL,
       method: 'get',
+      headers: { 'User-Agent': 'node' },
       json: true,
       qs: {
         access_token: token.access_token,
@@ -123,28 +129,24 @@ export class OAuthProvider {
       }
     });
 
+
+    const pick = (prop: string | MapUserDataValue, user: any) => {
+      if (typeof prop === 'string') {
+        return dot.pick(prop, socialUser);
+      } else {
+        return prop(user);
+      }
+    }
+
     this.socialUser = {
-      firstName: dot.pick(this.mapUserData.firstName, socialUser),
-      lastName: dot.pick(this.mapUserData.lastName, socialUser),
-      email: dot.pick(this.mapUserData.email, socialUser),
-      socialId: dot.pick(this.mapUserData.socialId, socialUser),
-      socialPic: dot.pick(this.mapUserData.socialPic, socialUser)
+      firstName: pick(this.mapUserData.firstName, socialUser),
+      lastName: pick(this.mapUserData.lastName, socialUser),
+      email: pick(this.mapUserData.email, socialUser),
+      socialId: pick(this.mapUserData.socialId, socialUser),
+      socialPic: pick(this.mapUserData.socialPic, socialUser)
     };
 
     return { user: this.socialUser, token: token.access_token };
   }
-
-
-  // /**
-  //  * Redirect to the final page with token in the query string
-  //  * @param res Redirect from 3rd party with user data
-  //  */
-  // public async finalize(req: Request, res: Response, user: User) {
-  //   if (!this.synthiaUser) return false;
-  //   const fp = await fingerprint(req);
-  //   const token = generateToken(fp, user);
-
-  //   res.redirect(`${URI_PREFIX}/final?token=${token}`);
-  // }
 }
 

@@ -49,5 +49,9 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
     "webpack-plugin-replace": "^1.2.0"
+  },
+  "dependencies": {
+    "cm-api": "^0.0.0",
+    "query-string": "^6.8.3"
   }
 }

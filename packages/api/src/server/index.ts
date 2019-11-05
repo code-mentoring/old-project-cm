@@ -35,8 +35,6 @@ export const startServer = async (
 
   app.use(github.router);
 
-
-  console.log('starting on port', port);
   await new Promise(res => httpServer.listen(port, res));
 
   logger.info(`🚀 Server ready at http://localhost:${port}/graphql`);

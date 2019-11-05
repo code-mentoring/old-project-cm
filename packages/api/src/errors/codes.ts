@@ -4,6 +4,7 @@ export enum ErrorCode {
   AuthUnauthorized = 'AuthUnauthorized',
   AuthUnauthenticated = 'AuthUnauthenticated',
   AuthInvalidDetails = 'AuthInvalidDetails',
+  ErrorAuthOauthCode = 'ErrorAuthOauthCode',
   AuthEmailNotVerified = 'AuthEmailNotVerified',
   AuthInvalidToken = 'AuthInvalidToken',
   AuthInvalidAuthorizationHeader = 'AuthInvalidAuthorizationHeader',

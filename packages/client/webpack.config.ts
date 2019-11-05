@@ -18,7 +18,7 @@ const config: Configuration = {
   entry: ['./src/index.tsx'],
 
   resolve: {
-    extensions: ['.ts', '.js', '.tsx']
+    extensions: ['.ts', '.js', '.tsx', '.gql']
   },
 
   output: {

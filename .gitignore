@@ -5,3 +5,4 @@ music/
 db
 .env
 **/*.db
+*.db

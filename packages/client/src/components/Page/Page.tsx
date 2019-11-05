@@ -1,4 +1,8 @@
+import './page.scss';
+
 import React, { useEffect } from 'react';
+
+import { Header } from '../Header/Header';
 
 export interface PageProps {
   type: string;
@@ -15,7 +19,11 @@ export const Page: React.FunctionComponent<PageProps> = ({
   useEffect(() => {
     window.document.title = title
   }, [title])
+
   return <main className={`page ${type}`}>
-    {children}
+    <Header />
+    <div className="content">
+      {children}
+    </div>
   </main>
 }

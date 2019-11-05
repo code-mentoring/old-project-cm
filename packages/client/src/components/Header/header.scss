@@ -1,0 +1,17 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  line-height: 8rem;
+  padding: 0 6rem;
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: underline;
+  }
+}

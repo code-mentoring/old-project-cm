@@ -15,6 +15,12 @@ export class ErrorAuthInvalidDetails extends ErrorBadRequest {
     super('Incorrect login details');
   }
 }
+export class ErrorAuthOauthCode extends ErrorBadRequest {
+  code = ErrorCode.ErrorAuthOauthCode;
+  constructor() {
+    super('Could not login with that code');
+  }
+}
 export class ErrorAuthEmailNotVerified extends ErrorBadRequest {
   code = ErrorCode.AuthEmailNotVerified;
   constructor() {
