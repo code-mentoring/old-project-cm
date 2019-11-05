@@ -4,13 +4,12 @@ import { HttpLink } from 'apollo-link-http';
 
 import { PORT } from '../config';
 
-
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: `http://localhost:${PORT}/`
+  uri: `http://localhost:${PORT}/`,
 });
 
 export const client = new ApolloClient({
   cache,
-  link
-})
+  link,
+});

@@ -7,4 +7,4 @@ import { HomePage } from '../pages/Home/Home.page';
 
 export const AppRouter = () => <Router history={history}><Switch>
   <Route component={HomePage} />
-</Switch></Router>
+</Switch></Router>;
