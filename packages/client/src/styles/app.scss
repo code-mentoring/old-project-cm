@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,800&display=swap');
+@import './variables';
+@import './reset';
+
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-size: 2.8rem;
+  color: $color-blue;
+}
