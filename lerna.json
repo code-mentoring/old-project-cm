@@ -1,0 +1,22 @@
+{
+  "lerna": "3.4.1",
+  "npmClient": "yarn",
+  "version": "independent",
+  "packages": [
+    "packages/*"
+  ],
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "message": "chore(release): publish [skip ci]"
+    },
+    "publish": {
+      "npmClient": "npm",
+      "verifyAccess": false,
+      "ignoreChanges": [
+        "*.md",
+        "tests/*"
+      ]
+    }
+  }
+}

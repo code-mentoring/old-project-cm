@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "jsx": "react",
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+    "declaration": false,
+    "composite": false
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ]
+}
