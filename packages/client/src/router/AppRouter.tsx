@@ -10,4 +10,4 @@ import { history } from './history';
 export const AppRouter = () => <Router history={history}><Switch>
   <Route path="/oauth/github" component={OAuthPage} />
   <Route component={HomePage} />
-</Switch></Router>
+</Switch></Router>;
