@@ -8,25 +8,23 @@ import { Configuration } from 'webpack';
 const Favicon = require('favicons-webpack-plugin');
 const ReplacePlugin = require('webpack-plugin-replace');
 
-
 const CSS = new ExtractText('app.css');
 
-const isProd = process.env.NODE_ENV != 'development';
-
+const isProd = process.env.NODE_ENV !== 'development';
 
 const config: Configuration = {
   entry: ['./src/index.tsx'],
 
   resolve: {
-    extensions: ['.ts', '.js', '.tsx']
+    extensions: ['.ts', '.js', '.tsx'],
   },
 
   output: {
-    publicPath: '/'
+    publicPath: '/',
   },
 
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 
   module: {
@@ -38,16 +36,16 @@ const config: Configuration = {
       {
         test: /font\/.*\.(svg|eot|ttf|woff|woff2)/, loader: 'url-loader', options: {
           limit: false,
-          outputPath: 'fonts'
-        }
+          outputPath: 'fonts',
+        },
       },
-      { test: /\.gql/, loader: 'graphql-tag/loader' }
-    ]
+      { test: /\.gql/, loader: 'graphql-tag/loader' },
+    ],
   },
 
   plugins: [
     new HTMLWebpack({
-      template: './src/index.html'
+      template: './src/index.html',
     }),
     CSS,
     new Favicon('./src/images/logo.png'),
@@ -59,11 +57,11 @@ const config: Configuration = {
     new ReplacePlugin({
       values: {
         '{{API_URL}}': isProd ? 'https://api.codementoring.co' : 'http://localhost:4000',
-        '{{IS_PROD}}': isProd
-      }
-    })
+        '{{IS_PROD}}': isProd,
+      },
+    }),
   ],
 
-}
+};
 
 export default config;

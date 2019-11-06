@@ -7,13 +7,19 @@
   "repository": "https://github.com/code-mentoring/project-cm.git",
   "author": "Tristan Matthias <hello@tristanmatthias.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": " tslint --project ./ --fix"
+  },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
+    "husky": "^3.0.9",
     "lerna": "^3.18.3",
     "nodemon": "^1.19.4",
     "ts-node": "^8.4.1",
+    "tslint": "^6.0.0-beta0",
+    "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.6.4"
   }
 }
