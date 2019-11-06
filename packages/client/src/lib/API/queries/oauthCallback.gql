@@ -1,0 +1,6 @@
+query oauthCallback($details: EOauthCallbackInput!) {
+  oauthCallback(details: $details) {
+    accessToken
+    expiry
+  }
+}

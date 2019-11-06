@@ -4,3 +4,5 @@ music/
 *.log
 db
 .env
+**/*.db
+*.db
