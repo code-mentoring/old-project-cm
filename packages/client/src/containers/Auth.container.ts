@@ -7,8 +7,8 @@ import { verify as verifyQuery } from '../lib/API/queries';
 
 
 export const AuthContainer = createContainer(() => {
-  let [token, setToken] = useState<string | null>(localStorage.getItem('token') || null);
-  let [verified, setVerified] = useState<boolean>(false);
+  const [token, setToken] = useState<string | null>(localStorage.getItem('token') || null);
+  const [verified, setVerified] = useState<boolean>(false);
   const [verify, { data, error, loading: verifying }] = useLazyQuery<EUser>(verifyQuery);
 
   useEffect(() => {
@@ -23,5 +23,5 @@ export const AuthContainer = createContainer(() => {
     } else if (error) localStorage.removeItem('token');
   }, [token]);
 
-  return { verified, verify, verifying, token, setToken }
+  return { verified, verify, verifying, token, setToken };
 });

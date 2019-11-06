@@ -5,8 +5,8 @@ import ExtractText from 'extract-text-webpack-plugin';
 import HTMLWebpack from 'html-webpack-plugin';
 import { Configuration } from 'webpack';
 
-const Favicon = require('favicons-webpack-plugin');
-const ReplacePlugin = require('webpack-plugin-replace');
+const favicon = require('favicons-webpack-plugin');
+const replacePlugin = require('webpack-plugin-replace');
 
 const CSS = new ExtractText('app.css');
 
@@ -16,15 +16,15 @@ const config: Configuration = {
   entry: ['./src/index.tsx'],
 
   resolve: {
-    extensions: ['.ts', '.js', '.tsx', '.gql'],
+    extensions: ['.ts', '.js', '.tsx', '.gql']
   },
 
   output: {
-    publicPath: '/',
+    publicPath: '/'
   },
 
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true
   },
 
   module: {
@@ -36,32 +36,33 @@ const config: Configuration = {
       {
         test: /font\/.*\.(svg|eot|ttf|woff|woff2)/, loader: 'url-loader', options: {
           limit: false,
-          outputPath: 'fonts',
-        },
+          outputPath: 'fonts'
+        }
       },
-      { test: /\.gql/, loader: 'graphql-tag/loader' },
-    ],
+      { test: /\.gql/, loader: 'graphql-tag/loader' }
+    ]
   },
 
   plugins: [
     new HTMLWebpack({
-      template: './src/index.html',
+      template: './src/index.html'
     }),
     CSS,
-    new Favicon('./src/images/logo.png'),
+    new favicon('./src/images/logo.png'),
     new Copy([
       // { from: './src/images/social', to: 'social' },
       // { from: './src/images/', to: 'images' },
       // { from: './_redirects' }
     ]),
-    new ReplacePlugin({
+    new replacePlugin({
       values: {
         '{{API_URL}}': isProd ? 'https://api.codementoring.co' : 'http://localhost:4000',
-        '{{IS_PROD}}': isProd,
-      },
-    }),
-  ],
+        '{{IS_PROD}}': isProd
+      }
+    })
+  ]
 
 };
 
+// tslint:disable-next-line
 export default config;

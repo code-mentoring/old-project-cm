@@ -13,8 +13,8 @@ const middlewareLink = new ApolloLink((operation, forward) => {
   if (token) {
     operation.setContext({
       headers: {
-        authorization: `Bearer ${token}`,
-      },
+        authorization: `Bearer ${token}`
+      }
     });
   }
   return forward(operation);
@@ -24,5 +24,5 @@ const link = middlewareLink.concat(httpLink);
 
 export const client = new ApolloClient({
   cache,
-  link,
+  link
 });

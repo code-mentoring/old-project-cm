@@ -19,7 +19,7 @@ export class OAuthResolver {
     if (providerName === 'github') provider = github;
     else throw new Error(`Invalid oauth provider ${providerName}`);
 
-    let { user: socialUser } = await provider.getUser(code);
+    const { user: socialUser } = await provider.getUser(code);
 
     const existing = await UserService.findByEmail(socialUser.email);
     const user = existing || await UserService.create(socialUser);
@@ -32,6 +32,6 @@ export class OAuthResolver {
   @Authorized()
   @Query(() => EVerifyResult)
   verify(): EVerifyResult {
-    return { valid: true }
+    return { valid: true };
   }
 }

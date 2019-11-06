@@ -18,4 +18,3 @@ export const AppRouter = () => {
     <Route component={HomePage} />
   </Switch></Router>;
 };
-

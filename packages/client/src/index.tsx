@@ -14,5 +14,5 @@ ReactDOM.render(
       <AppRouter />
     </ContainerWrapper>
   </ApolloProvider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );

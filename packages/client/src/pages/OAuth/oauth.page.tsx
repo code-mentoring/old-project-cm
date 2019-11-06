@@ -14,19 +14,18 @@ import { history } from '../../router/history';
 
 export const OAuthPage: React.FunctionComponent = () => {
   const { code } = qs.parse(document.location.search);
-  const {setToken} = AuthContainer.useContainer();
+  const { setToken } = AuthContainer.useContainer();
 
-  const { loading, data, error } = useQuery<
-  { oauthCallback: ETokenResult },
-  { details: EOauthCallbackInput }
-  >(oauthCallback, {
-    variables: {
-      details: {
-        code: code as string,
-        provider: 'github'
+  const { loading, data, error } = useQuery <
+    { oauthCallback: ETokenResult },
+    { details: EOauthCallbackInput }>(oauthCallback, {
+      variables: {
+        details: {
+          code: code as string,
+          provider: 'github'
+        }
       }
-    }
-  });
+    });
 
   if (!loading && data && data.oauthCallback.accessToken) {
     setToken(data.oauthCallback.accessToken);
@@ -35,11 +34,10 @@ export const OAuthPage: React.FunctionComponent = () => {
 
   const uiError = useMemo(() => {
     if (error) return error.graphQLErrors[0].message;
-    else return null;
-  }, [error])
+    return null;
+  }, [error]);
 
-
-  return <Page type='oauth' title='Logging in'>
+  return <Page type="oauth" title="Logging in">
     <div>
       <img alt="logo" src={logo} />
       {loading
@@ -49,5 +47,5 @@ export const OAuthPage: React.FunctionComponent = () => {
           : <span>Successfully logged in!</span>
       }
     </div>
-  </Page>
-}
+  </Page>;
+};

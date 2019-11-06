@@ -10,8 +10,8 @@ export interface HeaderUserProps {
 export const HeaderUser: React.FunctionComponent<HeaderUserProps> = ({
   me
 }) => {
-  return <div className='header-user'>
+  return <div className="header-user">
     <img src={me.socialPic} alt={`${me.firstName} ${me.lastName}`} />
     <span>{me.firstName}</span>
-  </div>
-}
+  </div>;
+};

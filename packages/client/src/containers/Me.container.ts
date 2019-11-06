@@ -7,8 +7,8 @@ import { AuthContainer } from './Auth.container';
 
 
 export const MeContainer = createContainer(() => {
-  let [me, setMe] = useState<EUser | null>(null);
-  const [loadMe, data] = useLazyQuery<{ me: EUser }>(meQuery)
+  const [me, setMe] = useState<EUser | null>(null);
+  const [loadMe, data] = useLazyQuery<{ me: EUser }>(meQuery);
   const { verified } = AuthContainer.useContainer();
 
   useEffect(() => {
@@ -16,10 +16,8 @@ export const MeContainer = createContainer(() => {
   }, [data]);
 
   useEffect(() => {
-    console.log(verified);
-
     if (verified && !me) loadMe();
   }, [verified]);
 
-  return { me, setMe, loadMe }
+  return { me, setMe, loadMe };
 });

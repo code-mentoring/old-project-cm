@@ -10,6 +10,5 @@ export class BaseModel<T extends Model<T>> extends Model<T> {
 
   @IsDate
   @Column
-  createdAt: Date
+  createdAt: Date;
 }
-

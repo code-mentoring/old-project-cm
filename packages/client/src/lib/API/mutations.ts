@@ -1,1 +1,1 @@
-export const mutations = {}
+export const mutations = {};

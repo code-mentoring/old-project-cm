@@ -1,9 +1,9 @@
-import { Field, InputType, ObjectType } from "type-graphql";
+import { Field, InputType, ObjectType } from 'type-graphql';
 
 @InputType()
 export class EOauthCallbackInput {
   @Field()
-  code: string
+  code: string;
   @Field()
   provider: string;
 }
@@ -11,13 +11,13 @@ export class EOauthCallbackInput {
 @ObjectType()
 export class ETokenResult {
   @Field()
-  accessToken: string
+  accessToken: string;
   @Field()
-  expiry: number
+  expiry: number;
 }
 
 @ObjectType()
 export class EVerifyResult {
   @Field()
-  valid: boolean
+  valid: boolean;
 }

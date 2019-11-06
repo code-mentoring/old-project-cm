@@ -17,5 +17,5 @@ export const Header: React.FunctionComponent<HeaderProps> = ({
       ? <HeaderUser me={me} />
       : <a className="button" href={`${API_HOST}/oauth/github`}>Login with Github</a>
     }
-  </header>
-}
+  </header>;
+};

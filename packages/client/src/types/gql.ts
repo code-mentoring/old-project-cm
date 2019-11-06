@@ -1,1 +1,1 @@
-declare module '*.gql'
+declare module '*.gql';

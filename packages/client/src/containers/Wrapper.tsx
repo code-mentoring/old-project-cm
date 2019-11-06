@@ -8,4 +8,4 @@ export const ContainerWrapper: React.FunctionComponent = ({ children }) =>
     <MeContainer.Provider>
       {children}
     </MeContainer.Provider>
-  </AuthContainer.Provider>
+  </AuthContainer.Provider>;
