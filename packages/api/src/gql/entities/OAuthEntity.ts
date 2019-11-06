@@ -15,3 +15,9 @@ export class ETokenResult {
   @Field()
   expiry: number
 }
+
+@ObjectType()
+export class EVerifyResult {
+  @Field()
+  valid: boolean
+}

@@ -2,17 +2,19 @@ import './oauth.page.scss';
 
 import { useQuery } from '@apollo/react-hooks';
 import { EOauthCallbackInput, ETokenResult } from 'cm-api';
+import qs from 'query-string';
 import React, { useMemo } from 'react';
 
 import { Page } from '../../components/Page/Page';
+import { AuthContainer } from '../../containers/Auth.container';
 import logo from '../../images/logo.png';
 import { oauthCallback } from '../../lib/API/queries';
 import { history } from '../../router/history';
-import qs from 'query-string'
 
 
 export const OAuthPage: React.FunctionComponent = () => {
   const { code } = qs.parse(document.location.search);
+  const {setToken} = AuthContainer.useContainer();
 
   const { loading, data, error } = useQuery<
   { oauthCallback: ETokenResult },
@@ -27,7 +29,7 @@ export const OAuthPage: React.FunctionComponent = () => {
   });
 
   if (!loading && data && data.oauthCallback.accessToken) {
-    localStorage.setItem('token', data.oauthCallback.accessToken);
+    setToken(data.oauthCallback.accessToken);
     history.push('/');
   }
 

@@ -6,10 +6,13 @@ import ReactDOM from 'react-dom';
 
 import { client } from './lib/apollo';
 import { AppRouter } from './router/AppRouter';
+import { ContainerWrapper } from './containers/Wrapper';
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <AppRouter />
+    <ContainerWrapper>
+      <AppRouter />
+    </ContainerWrapper>
   </ApolloProvider>,
   document.getElementById('root'),
 );
