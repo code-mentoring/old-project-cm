@@ -1,6 +1,7 @@
 import dot from 'dot-object';
 import { NextFunction, Request, Response, Router } from 'express';
 import request from 'request-promise-native';
+
 import { ErrorAuthOauthCode } from '../errors';
 import { CreateUser } from '../services/UserService';
 
@@ -57,7 +58,6 @@ export class OAuthProvider {
     this.getUserURL = options.getUserURL;
     this.getUserQueryString = options.getUserQueryString || {};
     this.mapUserData = options.mapUserData;
-
     this.router = Router();
     this.router.get(`${URI_PREFIX}/${this.provider}`, this.authenticate.bind(this));
   }
@@ -81,14 +81,13 @@ export class OAuthProvider {
     const _qs = Object.entries({
       client_id: this.clientID,
       redirect_uri: this.callbackURL,
+      scope: 'user:email',
       ...this.authenticateQueryString
     }).reduce((str, [k, v]) => {
-      // tslint:disable-next-line no-parameter-reassignment
+      // tslint:disable-next-line
       str += `${k}=${v}&`;
       return str;
     }, '?');
-
-
     res.redirect(`${this.authenticateURL}${_qs}`);
   }
 
@@ -96,7 +95,6 @@ export class OAuthProvider {
     // Convert code to access token
     let token;
     try {
-
       token = await request({
         url: this.getTokenURL,
         method: 'POST',
@@ -110,13 +108,13 @@ export class OAuthProvider {
           grant_type: 'authorization_code'
         }
       });
+
     } catch (e) {
       if (e.error && e.error.error) throw new ErrorAuthOauthCode();
       else throw e;
     }
 
     if (token.error) throw new ErrorAuthOauthCode();
-
 
     const socialUser = await request({
       url: this.getUserURL,
@@ -134,8 +132,23 @@ export class OAuthProvider {
         return dot.pick(prop, socialUser);
       }
       return prop(user);
-
     };
+
+
+    if (!socialUser.email) {
+      const [{ email }] = await request({
+        url: 'https://api.github.com/user/emails',
+        method: 'get',
+        headers: { 'User-Agent': 'node' },
+        json: true,
+        qs: {
+          access_token: token.access_token,
+          ...this.getUserQueryString
+        }
+      });
+      socialUser.email = email;
+    }
+
 
     this.socialUser = {
       firstName: pick(this.mapUserData.firstName, socialUser),
