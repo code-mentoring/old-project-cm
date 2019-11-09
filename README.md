@@ -32,7 +32,11 @@ If it's your first time using git, here is a tutorial that will be able to assis
 | git and github tutorial | https://guides.github.com/activities/hello-world/ |
 | git cheat sheet | https://gitsheet.wtf |
 
-Don't be afraid to message others on the slack channel if you run into diffuclties either!
+Don't be afraid to message others on the slack channel if you run into difficulties either!
+
+**YOU WILL ALSO NEED YOUR OWN GITHUB OAUTH APP**
+
+This is very easy to setup. Checkout the [SETUP.MD](setup.md) for more details
 
 ### Installing
 We use (Lerna)[https://github.com/lerna/lerna] to manage multiple packages (API & Client) in the same repo. To install the project on your machine:

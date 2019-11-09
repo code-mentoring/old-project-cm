@@ -8,7 +8,8 @@
   "author": "Tristan Matthias <hello@tristanmatthias.com>",
   "license": "MIT",
   "scripts": {
-    "lint": " tslint --project ./ --fix"
+    "lint": " tslint --project ./ --fix",
+    "setup": "lerna bootstrap; lerna link"
   },
   "workspaces": [
     "packages/*"
