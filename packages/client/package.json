@@ -44,6 +44,7 @@
     "react-router-dom": "^5.1.2",
     "sass-loader": "^8.0.0",
     "ts-loader": "^6.2.1",
+    "unstated-next": "^1.1.0",
     "url-loader": "^2.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",

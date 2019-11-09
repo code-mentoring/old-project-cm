@@ -14,7 +14,6 @@ import { github } from './middleware/oauth/github';
 
 let httpServer: Server;
 
-
 export const startServer = async (
   port: number = CONFIG.port,
   database?: string
@@ -38,8 +37,6 @@ export const startServer = async (
   await new Promise(res => httpServer.listen(port, res));
 
   logger.info(`🚀 Server ready at http://localhost:${port}/graphql`);
-
-
   return { httpServer, db };
 };
 

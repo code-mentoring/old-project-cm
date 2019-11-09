@@ -23,11 +23,11 @@ export interface ProviderOptions {
 
 type MapUserDataValue = (user: any) => string;
 export interface MapUserData {
-  socialPic: string | MapUserDataValue
-  socialId: string | MapUserDataValue
-  firstName: string | MapUserDataValue
-  lastName: string | MapUserDataValue
-  email: string | MapUserDataValue
+  socialPic: string | MapUserDataValue;
+  socialId: string | MapUserDataValue;
+  firstName: string | MapUserDataValue;
+  lastName: string | MapUserDataValue;
+  email: string | MapUserDataValue;
 }
 
 
@@ -83,6 +83,7 @@ export class OAuthProvider {
       redirect_uri: this.callbackURL,
       ...this.authenticateQueryString
     }).reduce((str, [k, v]) => {
+      // tslint:disable-next-line no-parameter-reassignment
       str += `${k}=${v}&`;
       return str;
     }, '?');
@@ -110,12 +111,11 @@ export class OAuthProvider {
         }
       });
     } catch (e) {
-      if (e.error && e.error.error) throw new ErrorAuthOauthCode()
+      if (e.error && e.error.error) throw new ErrorAuthOauthCode();
       else throw e;
     }
 
-    if (token.error) throw new ErrorAuthOauthCode()
-
+    if (token.error) throw new ErrorAuthOauthCode();
 
 
     const socialUser = await request({
@@ -129,14 +129,13 @@ export class OAuthProvider {
       }
     });
 
-
     const pick = (prop: string | MapUserDataValue, user: any) => {
       if (typeof prop === 'string') {
         return dot.pick(prop, socialUser);
-      } else {
-        return prop(user);
       }
-    }
+      return prop(user);
+
+    };
 
     this.socialUser = {
       firstName: pick(this.mapUserData.firstName, socialUser),
@@ -149,4 +148,3 @@ export class OAuthProvider {
     return { user: this.socialUser, token: token.access_token };
   }
 }
-

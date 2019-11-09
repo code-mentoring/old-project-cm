@@ -31,5 +31,5 @@ export const CONFIG_BASE: Partial<API_CONFIG> = {
       appId: process.env.GITHUB_APP_ID!,
       appSecret: process.env.GITHUB_APP_SECRET!
     }
-  },
+  }
 };

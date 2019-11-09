@@ -28,14 +28,14 @@ export interface JWTVerifyResult extends JWTData {
  */
 export const createToken = async (
   data: JWTData,
-  expiresIn = '15m',
+  expiresIn = '15m'
 ): Promise<{ token: string, expiry: number }> => {
-  if (process.env.NODE_ENV === 'development') expiresIn = '7d';
-  const token = jwt.sign(data, CONFIG.accessTokenSecret, { expiresIn });
+  let expires = expiresIn;
+  if (process.env.NODE_ENV === 'development') expires = '7d';
+  const token = jwt.sign(data, CONFIG.accessTokenSecret, { expiresIn: expires });
   const expiry = (jwt.decode(token) as JWTVerifyResult).exp;
   return { token, expiry };
 };
-
 
 /**
  * Attempt to verify the token is a valid JWT.

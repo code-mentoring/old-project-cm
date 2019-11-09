@@ -23,6 +23,6 @@ export const UserService = new class extends BaseService<
   GetUser
   > {
   async findByEmail(email: string) {
-    return await User.findOne({ where: { email } })
+    return await User.findOne({ where: { email } });
   }
-}(User)
+}(User);

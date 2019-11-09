@@ -19,6 +19,6 @@ export enum ErrorCode {
   NotFound = 'NotFound',
 
   ResourceNotFound = 'ResourceNotFound',
-  ResourceUnique = 'ResourceUnique',
+  ResourceUnique = 'ResourceUnique'
 }
 

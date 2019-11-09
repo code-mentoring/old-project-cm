@@ -11,5 +11,5 @@ import { API_CONFIG, Env } from './types';
 export const CONFIG_PRODUCTION: API_CONFIG = {
   ...CONFIG_BASE as API_CONFIG,
   env: Env.production,
-  corsAllowFrom: [/codementoring\.co$/],
+  corsAllowFrom: [/codementoring\.co$/]
 };

@@ -6,7 +6,7 @@ import { Header } from '../Header/Header';
 
 export interface PageProps {
   type: string;
-  title: string
+  title: string;
 }
 
 export const Page: React.FunctionComponent<PageProps> = ({
@@ -17,13 +17,13 @@ export const Page: React.FunctionComponent<PageProps> = ({
 
   // Update the window title
   useEffect(() => {
-    window.document.title = title
-  }, [title])
+    window.document.title = title;
+  }, [title]);
 
   return <main className={`page ${type}`}>
     <Header />
     <div className="content">
       {children}
     </div>
-  </main>
-}
+  </main>;
+};

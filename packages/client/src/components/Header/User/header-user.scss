@@ -1,0 +1,11 @@
+header .header-user {
+  display: flex;
+  align-items: center;
+
+  img {
+    border-radius: 50%;
+    width: 4rem;
+    margin-right: 1rem;
+    vertical-align: middle;
+  }
+}

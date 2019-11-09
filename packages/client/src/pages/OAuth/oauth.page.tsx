@@ -2,42 +2,42 @@ import './oauth.page.scss';
 
 import { useQuery } from '@apollo/react-hooks';
 import { EOauthCallbackInput, ETokenResult } from 'cm-api';
+import qs from 'query-string';
 import React, { useMemo } from 'react';
 
 import { Page } from '../../components/Page/Page';
+import { AuthContainer } from '../../containers/Auth.container';
 import logo from '../../images/logo.png';
 import { oauthCallback } from '../../lib/API/queries';
 import { history } from '../../router/history';
-import qs from 'query-string'
 
 
 export const OAuthPage: React.FunctionComponent = () => {
   const { code } = qs.parse(document.location.search);
+  const { setToken } = AuthContainer.useContainer();
 
-  const { loading, data, error } = useQuery<
-  { oauthCallback: ETokenResult },
-  { details: EOauthCallbackInput }
-  >(oauthCallback, {
-    variables: {
-      details: {
-        code: code as string,
-        provider: 'github'
+  const { loading, data, error } = useQuery <
+    { oauthCallback: ETokenResult },
+    { details: EOauthCallbackInput }>(oauthCallback, {
+      variables: {
+        details: {
+          code: code as string,
+          provider: 'github'
+        }
       }
-    }
-  });
+    });
 
   if (!loading && data && data.oauthCallback.accessToken) {
-    localStorage.setItem('token', data.oauthCallback.accessToken);
+    setToken(data.oauthCallback.accessToken);
     history.push('/');
   }
 
   const uiError = useMemo(() => {
     if (error) return error.graphQLErrors[0].message;
-    else return null;
-  }, [error])
+    return null;
+  }, [error]);
 
-
-  return <Page type='oauth' title='Logging in'>
+  return <Page type="oauth" title="Logging in">
     <div>
       <img alt="logo" src={logo} />
       {loading
@@ -47,5 +47,5 @@ export const OAuthPage: React.FunctionComponent = () => {
           : <span>Successfully logged in!</span>
       }
     </div>
-  </Page>
-}
+  </Page>;
+};

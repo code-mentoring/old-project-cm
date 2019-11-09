@@ -44,7 +44,6 @@ export const createContext: ContextFunction = async ({ req, connection }) => {
   } as Context;
 };
 
-
 /**
  * Upon a successful authentication, decrypt the access token and assign important
  * data to the context.
@@ -53,7 +52,7 @@ export const createContext: ContextFunction = async ({ req, connection }) => {
  */
 export const setContextFromToken = async (
   token: string,
-  ctx: Context | SubscriptionContext,
+  ctx: Context | SubscriptionContext
 ) => {
   const { user } = await verifyToken(ctx.fingerprint, token);
   ctx.user = user as User;

@@ -16,7 +16,7 @@ export const schema = () => buildSchema({
   dateScalarMode: 'isoDate',
   validate: false,
   resolvers,
-  authChecker,
+  authChecker
 });
 
 export interface SubscriptionOptions {
@@ -52,7 +52,7 @@ export const apollo = async (app: Express, server: Server) => {
     app, cors: {
       origin: CONFIG.corsAllowFrom,
       credentials: true,
-      optionsSuccessStatus: 200,
+      optionsSuccessStatus: 200
     }
   });
   apolloServer.installSubscriptionHandlers(server);
