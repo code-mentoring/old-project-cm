@@ -25,4 +25,6 @@ Once you have submitted a pull request, one of the project owners will review yo
 | Fullstack Developer | Quim Granados | quimgranados@gmail.com | [quimgv](https://github.com/quimgv) |
 | DevOps | Hajra Parveen | hajra.parveen.akhtar@gmail.com | [hajrap](https://github.com/hajrap) |
 | QA & Back End | Chidambaram Ganesan | chidambaram.ganesan@gmail.com | [chidag](https://github.com/chidag) |
-| Frontend Dev / UI Designer | David Allenby | hello@davidallenby.com | [davidallenby](https://github.com/davidallenby) |
+| Frontend Dev / UI Designer | David Allenby | hello@davidallenby.com | [davidallenby]
+(https://github.com/davidallenby) |
+| Frontend Dev | Yago Mackay | yagomackay@outlook.com | [YagoMackay](https://github.com/YagoMackay) |
