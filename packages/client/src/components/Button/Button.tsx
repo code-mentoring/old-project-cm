@@ -2,10 +2,7 @@ import './button.scss';
 
 import React from 'react';
 
-export interface ButtonProps {
-  text: string;
-  size: 'small' | 'medium' | 'large';
-}
+import { ButtonProps } from './Button.types';
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
   text,
