@@ -36,7 +36,7 @@ Don't be afraid to message others on the slack channel if you run into difficult
 
 **YOU WILL ALSO NEED YOUR OWN GITHUB OAUTH APP**
 
-This is very easy to setup. Checkout the [SETUP.MD](setup.md) for more details
+This is very easy to setup. Checkout the [SETUP.MD](SETUP.md) for more details
 
 ### Installing
 We use (Lerna)[https://github.com/lerna/lerna] to manage multiple packages (API & Client) in the same repo. To install the project on your machine:
