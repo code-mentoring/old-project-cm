@@ -6,6 +6,7 @@ import { Button } from '../../components/Button/Button';
 import { InputField } from '../../components/InputField/InputField';
 import { Title } from '../../components/Title/Title';
 import { Paragraph } from '../../components/Paragraph/Paragraph';
+import { Link } from '../../components/Link/Link';
 
 // Temporary page to see the styleguide components
 
@@ -39,6 +40,17 @@ export const Styleguide = () => <Page title="Code Mentoring" type="home">
       Code Mentoring is a global network of grass-roots communities. We run free,
       weekly events providing mentoring and teaching for programming across the world.
     </Paragraph>
+  </div>
+
+  <div>
+    <div>Link Button</div>
+    <Link to="/styleguide" button>
+      about us
+    </Link>
+    <div>Link Normal</div>
+    <Link to="/styleguide">
+      partners
+    </Link>
   </div>
 
 </Page>;
