@@ -53,7 +53,8 @@ The client side will be focused on front-end features, and the API will be focus
 To run the API in dev mode:
 
 1. In your terminal or powershell/cmd, navigate to `packages/api/`
-2. Type `yarn dev`
+2. Type `yarn build` to build an initial build located in the `dist` directory - nodemon looks for an index.js file in the `dist` folder, if there isn't one an error will be thrown.
+3. Type `yarn dev` to begin watching for typescript file changes and nodemon
 
 This will get your machine hosting the API on `https://localhost:4000` unless specified otherwise by the output in your Terminal/Powershell/cmd
 
