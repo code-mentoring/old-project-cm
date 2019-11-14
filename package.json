@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "lint": " tslint --project ./ --fix",
-    "setup": "lerna bootstrap; lerna link"
+    "setup": "lerna bootstrap && lerna link"
   },
   "workspaces": [
     "packages/*"

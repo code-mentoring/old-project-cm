@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc -p ./",
     "start": "node dist/server/index.js",
-    "dev": "tsc -w & NODE_ENV=development nodemon ./dist/server/index",
+    "dev": "concurrently \"tsc -w\" \"cross-env NODE_ENV=development nodemon ./dist/server/index\"",
     "generate-schema": "rimraf schema; ts-node src/lib/generateSchemaFile.ts; gqlg --schemaFilePath dist/schema.gql --destDirPath ./schema --depthLimit 10; ts-node src/lib/schemaQuery.ts"
   },
   "dependencies": {
@@ -54,6 +54,8 @@
     "@types/traverse": "^0.6.32",
     "@types/useragent": "^2.1.1",
     "@types/winston": "^2.4.4",
+    "concurrently": "^5.0.0",
+    "cross-env": "^6.0.3",
     "gql-generator": "^1.0.12",
     "reflect-metadata": "^0.1.13"
   }
