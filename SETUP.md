@@ -5,7 +5,8 @@ But don't worry, it's very easy! This guide will help you with that.
 
 
 ## Step 1: Create your app
-- Head over to (https://github.com/settings/developers)[https://github.com/settings/developers]
+- In the upper-right corner of any page, click your profile photo, then click **Settings**.
+In the left sidebar, click **Developer settings**. In the left sidebar, click **OAuth Apps**.  
 - Click the button `New OAuth App`
 - Fill the form with:
   - Application name: `Project CM`
