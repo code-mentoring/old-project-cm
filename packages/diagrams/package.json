@@ -1,0 +1,14 @@
+{
+  "name": "@codementoring/diagrams",
+  "version": "0.0.0",
+  "description": "Schematic diagrams for Code Mentoring",
+  "license": "MIT",
+  "repository": "https://github.com/code-mentoring/project-cm.git",
+  "scripts": {
+    "build": "mmdc -i src/diagram.mmd -o generated/diagram.svg"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "mermaid.cli": "^0.5.1"
+  }
+}
