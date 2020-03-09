@@ -1,6 +1,5 @@
 node_modules
 dist/
-music/
 *.log
 db
 .env

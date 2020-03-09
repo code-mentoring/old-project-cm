@@ -1,49 +1,49 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint-config-airbnb"
-    ],
-    "jsRules": {},
-    "rules": {
-        "align": false,
-        "no-default-export": true,
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-config-airbnb"
+  ],
+  "jsRules": {},
+  "rules": {
+    "align": false,
+    "no-default-export": false,
 
-        "no-consecutive-blank-lines": [true, 2],
-        "max-line-length": {
-            "severity": "warning",
-            "options": {
-                "limit": 120,
-                "ignore-pattern": "^import |^export {(.*?)}"
-            }
-        },
-
-        "quotemark": [true, "single", "jsx-double"],
-        "ter-arrow-parens": [true, "as-needed"],
-        "trailing-comma": [
-            true,
-            {
-                "multiline": {
-                    "objects": "never",
-                    "arrays": "never",
-                    "functions": "never",
-                    "typeLiterals": "never"
-                },
-                "esSpecCompliant": true
-            }
-        ],
-        "object-shorthand-properties-first": false,
-
-
-        "variable-name": [true, "allow-leading-underscore", "ban-keywords", "check-format", "allow-pascal-case"],
-
-        "import-name": [false, {
-            "react": "React",
-            "react-dom": "ReactDOM"
-        }],
-
-        "no-console": [true, "log", "error"],
-
-        "radix": [false]
+    "no-consecutive-blank-lines": [true, 2],
+    "max-line-length": {
+      "severity": "warning",
+      "options": {
+        "limit": 120,
+        "ignore-pattern": "^import |^export {(.*?)}"
+      }
     },
-    "rulesDirectory": []
+
+    "quotemark": [true, "single", "jsx-double"],
+    "ter-arrow-parens": [true, "as-needed"],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "objects": "never",
+          "arrays": "never",
+          "functions": "never",
+          "typeLiterals": "never"
+        },
+        "esSpecCompliant": true
+      }
+    ],
+    "object-shorthand-properties-first": false,
+
+
+    "variable-name": [true, "allow-leading-underscore", "ban-keywords", "check-format", "allow-pascal-case"],
+
+    "import-name": [false, {
+      "react": "React",
+      "react-dom": "ReactDOM"
+    }],
+
+    "no-console": [true, "log", "error"],
+
+    "radix": [false]
+  },
+  "rulesDirectory": []
 }

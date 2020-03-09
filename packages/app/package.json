@@ -1,0 +1,11 @@
+{
+  "name": "@codementoring/app",
+  "version": "0.0.0",
+  "description": "Learning and social platform for Code Mentoring",
+  "homepage": "app.codementoring.co",
+  "license": "MIT",
+  "repository": "https://github.com/code-mentoring/project-cm.git",
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {}
+}

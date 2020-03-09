@@ -1,8 +1,5 @@
-import { UserResolver } from './UserResolver';
-import { OAuthResolver } from './OAuthResolver';
-
+import { CourseResolver } from './Course.resolver';
 
 export const resolvers = [
-  UserResolver,
-  OAuthResolver
+  CourseResolver
 ];
