@@ -1,13 +1,30 @@
  classDiagram
-      User --> Course
-      Module --> Course
+     Path --> Module
+     Module --> ModuleUser
+     User --> ModuleUser
+     User --> Course
+     Module --> Course
 
-      User : +String id
-      User : +String firstName
-      User : +String lastName
+     Path : +String id
+     Path : +String name
+     Path : +String description
 
-      Course : +String id
-      Course : +String name
+     User : +String id
+     User : +String firstName
+     User : +String lastName
+     User : +String email
+     User : +String password
 
-      Module : +String id
-      Module : +String name
+     Course : +String id
+     Course : +String name
+     Course : +String description
+
+     Module : +String id
+     Module : +String name
+     Module : +String description
+     Module : +String prevModuleId
+     Module : +String pathId
+
+     ModuleUser : +String moduleId
+     ModuleUser : +String userId
+
