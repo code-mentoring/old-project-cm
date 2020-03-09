@@ -1,4 +1,4 @@
-import { ObjectType, Field } from 'type-graphql';
+import { ObjectType, Field, InputType } from 'type-graphql';
 import { Model, ModelField } from '@brix/model';
 
 @ObjectType()
@@ -9,5 +9,11 @@ export class ECourse {
 
   @Field()
   @ModelField()
+  name: string;
+}
+
+@InputType()
+export class CourseInput {
+  @Field()
   name: string;
 }
