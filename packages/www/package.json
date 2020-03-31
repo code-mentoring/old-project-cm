@@ -1,0 +1,29 @@
+{
+  "name": "@codementoring/www",
+  "version": "0.0.0",
+  "description": "API for Code Mentoring",
+  "homepage": "codementoring.co",
+  "license": "MIT",
+  "repository": "https://github.com/code-mentoring/project-cm.git",
+  "scripts": {
+    "predev": "yarn build",
+    "dev": "brix dev & yarn build:sass --watch",
+    "build": "tsc -p ./",
+    "build:sass": "node-sass --recursive src/sass --output dist/ --output-style compressed"
+  },
+  "dependencies": {
+    "@brix/api": "^0.2.2-alpha.55",
+    "@brix/cli": "^0.2.2-alpha.55",
+    "@brix/core": "^0.2.2-alpha.55",
+    "@brix/model": "^0.2.2-alpha.55",
+    "@brix/plugin-admin": "^0.2.2-alpha.56",
+    "@brix/plugin-auth-jwt": "^0.2.2-alpha.55",
+    "@brix/plugin-entity-user": "^0.2.2-alpha.55",
+    "@brix/plugin-store-sequelize": "^0.2.2-alpha.55",
+    "@brix/plugin-templates": "^0.2.2-alpha.56",
+    "type-graphql": "^0.17.6"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}

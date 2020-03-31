@@ -1,0 +1,75 @@
+extends ./base
+include ../components/menu
+
+append styles
+  link(rel="stylesheet", href="home.css")
+append body
+  +menu(query.menu)
+
+  section.title
+    .wrapper
+      .col
+        h1=data.heading
+        p=data.titleParagraph
+        a.button.bg-error Join as a student
+        a.button.bg-success Join as a mentor
+      .col
+        .square
+        img(src="/images/home/people.png", alt="Coding community")
+
+  section.paths.mt-8.mb-3
+    .wrapper
+      h3= data.teachTitle
+      ul.mv-4
+        li
+          img(src='/images/home/paths/html.svg')
+          span HTML
+        li
+          img(src='/images/home/paths/css.svg')
+          span CSS
+        li
+          img(src='/images/home/paths/js.svg')
+          span Javascript
+        li
+          img(src='/images/home/paths/nodejs.svg')
+          span Node.js
+        li
+          img(src='/images/home/paths/react.svg')
+          span React
+      a.button(href=query.pathsLinkPage.url) See all paths
+
+
+  section.learning
+    .wrapper.pv-9
+      h2.color-success=data.learningTitle
+      p.mt-3=data.learningBody
+      img(src="/images/home/platform.png", alt="Learning platform with community")
+
+
+  section.partners.mt-8.mb-3
+    .wrapper
+      h3.color-error= data.partnersTitle
+      ul.mv-4
+        li
+          img(src='/images/home/partners/microsoft.svg' alt="Microsoft")
+        li
+          img(src='/images/home/partners/ga.svg' alt="General Assembly")
+        li
+          img(src='/images/home/partners/fcc.svg' alt="Free Code Camp")
+
+      a.button.bg-error(href=query.pathsLinkPage.url) Partner with us
+
+
+  section.testimonials
+    .wrapper
+      h3.color-error= data.testimonialsTitle
+      ul.testimonials
+        for testimonial in data.testimonials
+          li
+            img(src=testimonial.image, alt=testimonial.name)
+            blockquote
+              p= testimonial.quote
+              footer= testimonial.name
+      nav.testimonial-nav
+        for testimonial in data.testimonials
+          span

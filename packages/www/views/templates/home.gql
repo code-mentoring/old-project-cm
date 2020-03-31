@@ -1,0 +1,13 @@
+query( $menuId: String!, $pathsLinkPageId: String! ) {
+  menu(id: $menuId) {
+    items {
+      text page { url }
+      items {
+        text page { url }
+      }
+    }
+  }
+  pathsLinkPage: page(id: $pathsLinkPageId) {
+    url
+  }
+}

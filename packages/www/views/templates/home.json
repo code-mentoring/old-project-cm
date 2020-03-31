@@ -1,0 +1,106 @@
+[{
+    "widget": "picker",
+    "name": "data.menuId",
+    "label": "Menu",
+    "pickAction": {
+      "action": "pick",
+      "itemMap": {
+        "title": "name",
+        "subTitle": "size"
+      },
+      "query": "{menus {id name size } }",
+      "queryKey": "menus",
+      "pickKey": "id"
+    },
+    "renderQuery": "query($id: String!) { menu(id:$id) { name } }",
+    "renderString": "$.name",
+    "icon": "menu",
+    "emptyText": "Select a menu"
+  },
+  {
+    "widget": "input",
+    "name": "data.heading",
+    "label": "Heading",
+    "type": "text",
+    "placeholder": "Heading"
+  },
+  {
+    "widget": "input",
+    "name": "data.titleParagraph",
+    "label": "Title Section Paragraph",
+    "type": "textarea",
+    "placeholder": "Body"
+  },
+
+
+  {
+    "widget": "input",
+    "name": "data.teachTitle",
+    "label": "Teach section title",
+    "type": "text"
+  },
+  {
+    "widget": "picker",
+    "name": "data.pathsLinkPageId",
+    "label": "Teach section link",
+    "pickAction": {
+      "action": "pick",
+      "itemMap": {
+        "title": "title",
+        "subTitle": "url"
+      },
+      "query": "{pages {id title url } }",
+      "queryKey": "pages",
+      "pickKey": "id"
+    },
+    "renderQuery": "query($id: String!) { page(id:$id) { title } }",
+    "renderString": "$.title",
+    "icon": "page",
+    "emptyText": "Select a page"
+  },
+
+  {
+    "widget": "input",
+    "name": "data.learningTitle",
+    "label": "Learning section title",
+    "type": "text"
+  },
+  {
+    "widget": "input",
+    "name": "data.learningBody",
+    "label": "Learning section body",
+    "type": "textarea"
+  },
+
+  {
+    "widget": "input",
+    "name": "data.partnersTitle",
+    "label": "Partners section title",
+    "type": "text"
+  },
+
+  {
+    "widget": "input",
+    "name": "data.testimonialsTitle",
+    "label": "Testimonials section title",
+    "type": "text"
+  },
+  {
+    "widget": "list",
+    "name": "data.testimonials",
+    "label": "Testimonials",
+    "fields": [{
+        "widget": "input",
+        "name": "name",
+        "label": "Name",
+        "type": "text"
+      },
+      {
+        "widget": "input",
+        "name": "testimonial",
+        "label": "Testimonial",
+        "type": "textarea"
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+dbConnection:
+  storage: ./codementoring.db
+port: 8000
+
+plugins:
+  store-sequelize:
+  media:
+    provider: filesystem
+  entity-user:
+  auth-jwt:
+  templates:
+  admin:
+  static:
+    dist: "/"
+    public: "/"

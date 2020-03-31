@@ -1,0 +1,129 @@
+@import '../../node_modules/@brix/styles/functions.scss';
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: spacing(128);
+  margin: auto;
+}
+
+@mixin triangle($color, $position: top) {
+  display: block;
+  position: absolute;
+  #{$position}: 0;
+  left: 0;
+  width: 100%;
+  content: '';
+  height: spacing(10);
+  background: linear-gradient(to $position right, $color 49%, white 50%);
+  z-index: -1;
+  @if $position == top { transform: translateY(-100%); }
+  @else { transform: translateY(100%); }
+}
+
+section.title {
+  position: relative;
+  height: calc(100vh - #{spacing(35)});
+  min-height: spacing(85);
+  background: linear-gradient(white, #f4f2fb);
+
+  &::after { @include triangle(#f4f2fb, bottom); }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+      position: relative;
+    }
+
+    .col {
+      position: relative;
+    }
+
+    .col:last-child {
+      max-width: spacing(80);
+    }
+
+    .square {
+      position: absolute;
+      border: 10px solid var(--color-grey-30);
+      padding-bottom: 80%;
+      width: 80%;
+      top: -10%;
+      right: -5%;
+    }
+  }
+
+  p {
+    margin: spacing(2) 0;
+    max-width: spacing(45);
+  }
+}
+
+
+section.paths {
+  text-align: center;
+  .wrapper {
+    width: spacing(60);
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    li {
+      img {
+        margin: auto;
+        height: spacing(6);
+        display: block;
+      }
+      span {
+        display: inline-block;
+        margin-top: spacing(0.5);
+        font-weight: bold;
+        font-size: var(--fs-small);
+      }
+    }
+  }
+}
+
+
+section.learning {
+  position: relative;
+  background:var(--color-green-bg);
+  text-align: left;
+
+  h2, p {
+    max-width: spacing(57);
+  }
+  .wrapper {
+    width: 100%;
+  }
+
+  &::before { @include triangle(var(--color-green-bg), top); }
+  &::after { @include triangle(var(--color-green-bg), bottom); }
+
+  img {
+    width: calc(100% + #{spacing(10)});
+    margin-left: spacing(-3);
+    margin-right: spacing(-7);
+  }
+}
+
+
+section.partners {
+  text-align: center;
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    max-height: spacing(5);
+    width: 100%;
+    margin: 0 spacing(2);
+    max-width: spacing(20);
+  }
+}

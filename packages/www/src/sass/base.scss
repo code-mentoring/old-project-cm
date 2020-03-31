@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,900&display=swap');
+@import url('/fonts/butler/butler.css');
+
+@import '../../node_modules/@brix/styles/index';
+@import '../../node_modules/@brix/styles/components/type';
+@import '../../node_modules/@brix/styles/components/button';
+@import '../../node_modules/@brix/styles/lib/colors';
+@import '../../node_modules/@brix/styles/lib/box';
+
+
+:root {
+  --spacing: 8px;
+  --color-main: #1F00C5;
+  --color-success: #0DD2AB;
+  --color-green-bg: #F3FAF8;
+  --color-pink: #FF91D0;
+  --color-error: var(--color-pink);
+  --color-bg: white;
+
+  --color-grey-90: #11006C;
+  --color-grey-30: #C4BEE0;
+
+  --color-text: var(--color-grey-90);
+
+  --border-radius: 8px;
+
+  --body-fs: 1.6rem;
+
+  --ff-main: "Open Sans";
+  --ff-headings: "Butler";
+
+  --h1-fw: 800;
+  --h1-lh: #{spacing(10)};
+  --h1-fs: 6.4rem;
+  --h1-color: var(--color-main);
+  --h1-letter-spacing: 0.75px;
+
+  --h2-fw: 700;
+  --h2-lh: #{spacing(6)};
+  --h2-fs: 3.6rem;
+  --h2-color: var(--color-main);
+  --h2-letter-spacing: 0.75px;
+
+  --h3-fw: 900;
+  --h3-fs: 2.4rem;
+  --h3-letter-spacing: 0.75px;
+  --h3-color: var(--color-main);
+
+  --button-fs: 1.4rem;
+  --button-fw: 900;
+  --button-text-trans: uppercase;
+  --button-height: #{spacing(4.5)};
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  max-width: spacing(140);
+  left: 50%;
+  top: spacing(8);
+  transform: translateX(-50%);
+
+  nav {
+    display: flex;
+    align-items: center;
+    color: var(--color-grey-30);
+    a:not(:first-child) {
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      letter-spacing: 0.75px;
+      font-weight: 800;
+      color: var(--color-grey-30);
+      margin-left: spacing(8);
+    }
+  }
+
+  .logo {
+    height: spacing(6);
+    flex-grow: 0;
+    margin-right: auto;
+    img {
+      height: 100%;
+    }
+  }
+  z-index: 100;
+}
+
+
+// /* We’re an international community of weekly meetups that provide free mentoring and coaching for developers. */
+
+// position: absolute;
+// width: 407px;
+// height: 74px;
+// left: 208px;
+// top: 427px;
+
+// /* Body */
+// font-family: Open Sans;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 16px;
+// line-height: 28px;
+// /* or 175% */
+// letter-spacing: 0.75px;
+
+// /* Grey 100 */
+// color: #11006C;

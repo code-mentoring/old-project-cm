@@ -1,0 +1,6 @@
+mixin menu(menu)
+  header
+    nav
+      a.logo(href='/') #[img(src="/images/logo.svg" alt="Code Mentoring")]
+      each item in menu.items
+        a(href=item.page.url)= item.text
